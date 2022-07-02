@@ -1,0 +1,10 @@
+bin:sbin/bacula-fd
+lib:lib/bpipe-fd.so
+lnk:lib/libbac.so
+lib:lib/libbac-11.0.6.so
+lnk:lib/libbaccfg.so
+lib:lib/libbaccfg-11.0.6.so
+lnk:lib/libbacfind.so
+lib:lib/libbacfind-11.0.6.so
+etc:etc/bacula-fd.conf
+var:var/bacula
