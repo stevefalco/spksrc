@@ -3,7 +3,7 @@ PKG_VERS = 11.0.6
 PKG_EXT = tar.gz
 PKG_DIR = $(PKG_NAME)-$(PKG_VERS)
 PKG_DIST_NAME = $(PKG_DIR).$(PKG_EXT)
-PKG_DIST_SITE = http://downloads.sourceforge.net/project/bacula/bacula/$(PKG_VERS)
+PKG_DIST_SITE = https://download.sourceforge.net/$(PKG_NAME)
 
 DEPENDS = cross/openssl
 
