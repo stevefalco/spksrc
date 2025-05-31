@@ -5,20 +5,21 @@ PACKAGE="bacula-client"
 DNAME="Bacula Client"
 
 # Others
-INSTALL_DIR="/usr/local/${PACKAGE}"
-PATH="${INSTALL_DIR}/bin:${INSTALL_DIR}/sbin:${PATH}"
+PATH="${SYNOPKG_PKGDEST}/bin:${SYNOPKG_PKGDEST}/sbin:${PATH}"
 USER="root"
-BBACKUPD="${INSTALL_DIR}/sbin/bacula-fd"
-CFG_FILE="${INSTALL_DIR}/etc/bacula-fd.conf"
+BBACKUPD="${SYNOPKG_PKGDEST}/sbin/bacula-fd"
+CFG_FILE="${SYNOPKG_PKGDEST}/etc/bacula-fd.conf"
 PID_FILE="/var/run/bacula-fd.9102.pid"
 
 
 start_daemon ()
 {
     if [ -f ${CFG_FILE} ]; then
-        su - ${USER} -c "${BBACKUPD} -c ${CFG_FILE}"
+	    id
+	    env
+        ${BBACKUPD} -c ${CFG_FILE}
     else
-        echo "Edit /etc/bacula-fd.conf to configure the Bacula file daemon" >&2
+        echo "Edit ${CFG_FILE} to configure the Bacula file daemon" >&2
     fi
 }
 
